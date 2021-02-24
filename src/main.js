@@ -61,3 +61,28 @@ window.onbeforeunload = () => {
     const string = JSON.stringify(hashMap)
     localStorage.setItem('x', string)
 }
+ 
+$(document).on('keypress', '.search', (e) => {
+    e.stopPropagation()
+})
+
+let timeOut = 0
+$(document).on("touchstart",  function(e) {
+    // 长按事件触发
+    timeOutEvent = setTimeout(function() {
+      timeOutEvent = 0;
+        $('.close').addClass('show')
+    }, 500);
+    //长按500毫秒
+  });
+  
+
+
+$(document).on('keypress', (e)=>{
+    const {key} = e
+    for (let i = 0; i < hashMap.length; i++) {
+        if(hashMap[i].logo.toLowerCase() === key) {
+            window.open(hashMap[i].url, '_self')
+        }
+    }
+})

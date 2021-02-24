@@ -110,8 +110,19 @@ body{background: #eee;}
     position: absolute;
     right: 10px;
     top: 5px;
-    display: none;
     cursor: default;
+    display: none;
+}
+/* @media (min-width:500px) {
+    .siteList .site > .close {
+        display: none;
+    }
+    .siteList .site:hover > .close {
+        display: block;
+    }
+} */
+.show {
+    display: block;
 }
 .siteList .site:hover > .close {
     display: block;
