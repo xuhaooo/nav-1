@@ -6,8 +6,8 @@ const $lastLi = $siteList.find('li.last')
 const x = localStorage.getItem('x')
 const xObject = JSON.parse(x)
 const hashMap = xObject || [
-    {logo: 'A', nodeType: 'text', url: 'https://www.acfun.cn'},
-    {logo: './images/bilibili.jpeg', nodeType: 'image', url: 'https://www.bilibili.com'},
+    {logo: 'A', url: 'https://www.acfun.cn'},
+    {logo: 'B', url: 'https://www.bilibili.com'},
 ]
 
 const simplifyUrl = (url) => {
@@ -22,7 +22,7 @@ const render = () => {
         const $li = $(`<li>
             <a href="${node.url}">
                 <div class="site">
-                    <div class="logo">${node.logo[0]}</div>
+                    <div class="logo">${node.logo}</div>
                     <div class="link">${simplifyUrl(node.url)}</div>
                 </div>
             </a>
@@ -38,7 +38,7 @@ $('.addButton').on('click', ()=>{
         url = 'https://' + url
     }
     hashMap.push({
-        logo: url[0],
+        logo: simplifyUrl(url)[0],
         logoType: 'text',
         url: url
     })

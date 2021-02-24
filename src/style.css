@@ -73,6 +73,7 @@ body{background: #eee;}
     justify-content: center;
     align-items: center;
     font-size: 64px;
+    text-transform: uppercase;
 }
 .siteList .site > .link {
     font-size: 14px;
