@@ -125,6 +125,10 @@ $('.addButton').on('click', function () {
   if (url.indexOf('http') !== 0) {
     url = 'https://' + url;
   }
+
+  var $siteList = $('.siteList');
+  var $lastLi = $siteList.find('li.last');
+  var $li = $("<li>\n        <a href=\"".concat(url, "\">\n            <div class=\"site\">\n                <div class=\"logo\">").concat(url[0], "</div>\n                <div class=\"link\">").concat(url, "</div>\n            </div>\n        </a>\n    </li>")).insertBefore($lastLi);
 });
 },{}],"../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
