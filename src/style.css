@@ -15,10 +15,12 @@ body{background: #eee;}
 
 .globalHeader {
     margin: 20px;
+}
+.searchForm {
     display: flex;
     justify-content: space-between;
 }
-.globalHeader > input {
+.searchForm > input {
     width: 100%;
     margin-right: 10px;
     height: 40px;
@@ -27,7 +29,7 @@ body{background: #eee;}
     border: 1px solid #ddd;
     border-radius: 4px;
 }
-.globalHeader > button {
+.searchForm > button {
     white-space: nowrap;
     padding: 0 28px;
     border: none;
