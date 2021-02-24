@@ -121,7 +121,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 var log = console.log.bind(console);
 var $siteList = $('.siteList');
 var $lastLi = $siteList.find('li.last');
-var hashMap = [{
+var x = localStorage.getItem('x');
+var xObject = JSON.parse(x);
+var hashMap = xObject || [{
   logo: 'A',
   nodeType: 'text',
   url: 'https://www.acfun.cn'
@@ -153,6 +155,11 @@ $('.addButton').on('click', function () {
   });
   render();
 });
+
+window.onbeforeunload = function () {
+  var string = JSON.stringify(hashMap);
+  localStorage.setItem('x', string);
+};
 },{}],"../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

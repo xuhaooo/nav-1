@@ -3,7 +3,9 @@ let log = console.log.bind(console)
 const $siteList = $('.siteList')
 const $lastLi = $siteList.find('li.last')
 
-const hashMap = [
+const x = localStorage.getItem('x')
+const xObject = JSON.parse(x)
+const hashMap = xObject || [
     {logo: 'A', nodeType: 'text', url: 'https://www.acfun.cn'},
     {logo: './images/bilibili.jpeg', nodeType: 'image', url: 'https://www.bilibili.com'},
 ]
@@ -36,3 +38,8 @@ $('.addButton').on('click', ()=>{
     })
     render()
 })
+
+window.onbeforeunload = () => {
+    const string = JSON.stringify(hashMap)
+    localStorage.setItem('x', string)
+}
