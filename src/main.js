@@ -25,6 +25,11 @@ const render = () => {
                 <div class="site">
                     <div class="logo">${node.logo}</div>
                     <div class="link">${simplifyUrl(node.url)}</div>
+                    <div class="close">
+                        <svg class="icon">
+                            <use xlink:href="#icon-close5"></use>
+                        </svg>
+                    </div>
                 </div>
             </a>
         </li>`).insertBefore($lastLi)
