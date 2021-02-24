@@ -3,6 +3,12 @@
 *:before, *:after {box-sizing: border-box;}
 *{margin: 0;padding: 0;}
 ul,ol{list-style: none;}
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
 
 /* style */
 body{background: #eee;}
@@ -36,20 +42,61 @@ body{background: #eee;}
 }
 
 .siteList {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
 }
 .siteList > li {
-
+    margin-bottom: 10px;
 }
 .siteList .site {
-
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px 0;
 }
 .siteList .site > .logo {
-
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
 }
 .siteList .site > .link {
-
+    font-size: 14px;
+    margin-top: 4px;
 }
 .siteList .addButton {
-
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 20px 0;
+    width: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+.siteList .addButton .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+}
+.siteList .addButton .icon {
+    width: 56px;
+    height: 56px;
+}
+.siteList .addButton .text {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
