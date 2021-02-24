@@ -6,8 +6,11 @@ const $lastLi = $siteList.find('li.last')
 const x = localStorage.getItem('x')
 const xObject = JSON.parse(x)
 const hashMap = xObject || [
-    {logo: 'A', url: 'https://www.acfun.cn'},
-    {logo: 'B', url: 'https://www.bilibili.com'},
+    {logo: 'G', url: 'https://www.google.com'},
+    {logo: 'S', url: 'https://www.stackoverflow.com'},
+    {logo: 'J', url: 'https://www.juejin.cn'},
+    {logo: 'B', url: 'https://www.baidu.com'},
+    {logo: 'G', url: 'https://www.github.com'}
 ]
 
 const simplifyUrl = (url) => {
