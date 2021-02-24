@@ -132,7 +132,7 @@ var hashMap = xObject || [{
 }];
 
 var simplifyUrl = function simplifyUrl(url) {
-  return url.replace('https://', '').replace('http://', '').replace('www.', '');
+  return url.replace('https://', '').replace('http://', '').replace('www.', '').replace(/\/.*/, '');
 };
 
 var render = function render() {
