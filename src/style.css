@@ -85,6 +85,7 @@ body{background: #eee;}
     border-radius: 4px;
     padding: 20px 0;
     position: relative;
+    cursor: pointer;
 }
 .siteList .site > .logo {
     width: 64px;
@@ -103,6 +104,11 @@ body{background: #eee;}
     position: absolute;
     right: 10px;
     top: 5px;
+    display: none;
+    cursor: default;
+}
+.siteList .site:hover > .close {
+    display: block;
 }
 .siteList .addButton {
     border: 1px solid #ddd;
