@@ -124,11 +124,20 @@ var $lastLi = $siteList.find('li.last');
 var x = localStorage.getItem('x');
 var xObject = JSON.parse(x);
 var hashMap = xObject || [{
-  logo: 'A',
-  url: 'https://www.acfun.cn'
+  logo: 'G',
+  url: 'https://www.google.com'
+}, {
+  logo: 'S',
+  url: 'https://www.stackoverflow.com'
+}, {
+  logo: 'J',
+  url: 'https://www.juejin.cn'
 }, {
   logo: 'B',
-  url: 'https://www.bilibili.com'
+  url: 'https://www.baidu.com'
+}, {
+  logo: 'G',
+  url: 'https://www.github.com'
 }];
 
 var simplifyUrl = function simplifyUrl(url) {
@@ -192,4 +201,4 @@ $(document).on('keypress', function (e) {
   }
 });
 },{}]},{},["epB2"], null)
-//# sourceMappingURL=main.ed506a7c.js.map
+//# sourceMappingURL=main.1eaf8684.js.map
