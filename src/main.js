@@ -19,20 +19,26 @@ const simplifyUrl = (url) => {
 
 const render = () => {
     $siteList.find('li:not(.last)').remove()
-    hashMap.forEach((node)=>{
+    hashMap.forEach((node, index)=>{
         const $li = $(`<li>
-            <a href="${node.url}">
-                <div class="site">
-                    <div class="logo">${node.logo}</div>
-                    <div class="link">${simplifyUrl(node.url)}</div>
-                    <div class="close">
-                        <svg class="icon">
-                            <use xlink:href="#icon-close5"></use>
-                        </svg>
-                    </div>
+            <div class="site">
+                <div class="logo">${node.logo}</div>
+                <div class="link">${simplifyUrl(node.url)}</div>
+                <div class="close">
+                    <svg class="icon">
+                        <use xlink:href="#icon-close5"></use>
+                    </svg>
                 </div>
-            </a>
+            </div>
         </li>`).insertBefore($lastLi)
+        $li.on('click', () => {
+            window.open(node.url, '_self')
+        })
+        $li.on('click', '.close', (e) => {
+            e.stopPropagation()
+            hashMap.splice(index, 1)
+            render()
+        })
     })
 }
 render()
