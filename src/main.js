@@ -1,18 +1,38 @@
 let log = console.log.bind(console)
 
+const $siteList = $('.siteList')
+const $lastLi = $siteList.find('li.last')
+
+const hashMap = [
+    {logo: 'A', nodeType: 'text', url: 'https://www.acfun.cn'},
+    {logo: './images/bilibili.jpeg', nodeType: 'image', url: 'https://www.bilibili.com'},
+]
+
+const render = () => {
+    $siteList.find('li:not(.last)').remove()
+    hashMap.forEach((node)=>{
+        const $li = $(`<li>
+            <a href="${node.url}">
+                <div class="site">
+                    <div class="logo">${node.logo[0]}</div>
+                    <div class="link">${node.url}</div>
+                </div>
+            </a>
+        </li>`).insertBefore($lastLi)
+    })
+}
+render()
+
+
 $('.addButton').on('click', ()=>{
     let url = window.prompt('请问你想要添加的网址是啥？')
     if(url.indexOf('http') !== 0){
         url = 'https://' + url
     }
-    const $siteList = $('.siteList')
-    const $lastLi = $siteList.find('li.last')
-    const $li = $(`<li>
-        <a href="${url}">
-            <div class="site">
-                <div class="logo">${url[0]}</div>
-                <div class="link">${url}</div>
-            </div>
-        </a>
-    </li>`).insertBefore($lastLi)
+    hashMap.push({
+        logo: url[0],
+        logoType: 'text',
+        url: url
+    })
+    render()
 })
