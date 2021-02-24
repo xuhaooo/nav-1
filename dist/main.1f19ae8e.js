@@ -118,7 +118,14 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
+var log = console.log.bind(console);
+$('.addButton').on('click', function () {
+  var url = window.prompt('请问你想要添加的网址是啥？');
 
+  if (url.indexOf('http') !== 0) {
+    url = 'https://' + url;
+  }
+});
 },{}],"../../../.config/yarn/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
